@@ -2,13 +2,16 @@
   'hdl'
 ]
 'name': 'Nand2Tetris HDL, nand2tetrisHDL'
-'scopeName': 'source.verilog'
+'scopeName': 'source.nand2tetrisHDL'
 'patterns': [
   {
     'include': '#comments'
   }
   {
     'include': '#constants'
+  }
+  {
+    'include': '#module_pattern'
   }
 ]
 'repository':
@@ -34,7 +37,7 @@
       {
         'begin': '/\\*'
         'end': '\\*/'
-        'name': 'comment.block.c-style.verilog'
+        'name': 'comment.block.c-style.nand2tetrisHDL'
       }
     ]
   'constants':
@@ -42,5 +45,48 @@
       {
         'match': '\\b([0-9]+)\\b'
         'name': 'constant.numeric.nand2tetrisHDL'
+      }
+    ]
+  'keywords':
+    'patterns': [
+      {
+        'match': '\\b(IN\\b|OUT\\b|PARTS:\\B)'
+        'name': 'keyword.other.nand2tetrisHDL'
+      }
+    ]
+  'module_pattern':
+    'patterns': [
+      {
+        'begin': '\\b(CHIP)\\s+([a-zA-Z][a-zA-Z0-9_]*)'
+        'beginCaptures':
+          '1':
+            'name': 'storage.type.module.nand2tetrisHDL'
+          '2':
+            'name': 'entity.name.type.module.nand2tetrisHDL'
+        'end': '(?<=})'
+        'endCaptures':
+          '0':
+            'name': 'storage.type.module.nand2tetrisHDL'
+        'name': 'meta.block.module.nand2tetrisHDL'
+        'patterns': [
+          {
+            'include': '#comments'
+          }
+          {
+            'include': '#keywords'
+          }
+          {
+            'include': '#constants'
+          }
+          # {
+          #   'include': '#strings'
+          # }
+          # {
+          #   'include': '#instantiation_patterns'
+          # }
+          # {
+          #   'include': '#operators'
+          # }
+        ]
       }
     ]
