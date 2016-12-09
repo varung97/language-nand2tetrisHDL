@@ -1,7 +1,7 @@
 'fileTypes': [
   'hdl'
 ]
-'name': 'Nand2Tetris HDL, nand2tetrisHDL'
+'name': 'Nand2Tetris HDL'
 'scopeName': 'source.nand2tetrisHDL'
 'patterns': [
   {
@@ -64,7 +64,7 @@
     'patterns': [
       {
         'match': '='
-        'name': 'keyword.operator.verilog'
+        'name': 'keyword.operator.nand2tetrisHDL'
       }
     ]
   'parenthetical_list':
@@ -73,12 +73,12 @@
         'begin': '\\(\\s*'
         'beginCaptures':
           '0':
-            'name': 'punctuation.section.list.verilog'
+            'name': 'punctuation.section.list.nand2tetrisHDL'
         'end': '\\s*\\)'
         'endCaptures':
           '0':
-            'name': 'punctuation.section.list.verilog'
-        'name': 'meta.block.parenthetical_list.verilog'
+            'name': 'punctuation.section.list.nand2tetrisHDL'
+        'name': 'meta.block.parenthetical_list.nand2tetrisHDL'
         'patterns': [
           {
             'include': '#constants'
@@ -87,16 +87,16 @@
             'begin': '\\b[a-zA-Z][a-zA-Z0-9]*\\b\\s*(?==)'
             'beginCaptures':
               '0':
-                'name': 'variable.parameter.type.module.verilog'
+                'name': 'variable.parameter.type.module.nand2tetrisHDL'
             'end': '(?<==)\\s*\\b[a-zA-Z][a-zA-Z0-9]*\\b'
             'endCaptures':
               '0':
-                'name': 'variable.other.type.wire.verilog'
-            'name': 'meta.block.parameter.passing.verilog'
+                'name': 'variable.other.type.wire.nand2tetrisHDL'
+            'name': 'meta.block.parameter.passing.nand2tetrisHDL'
             'patterns': [
               {
                 'match': '='
-                'name': 'keyword.operator.verilog'
+                'name': 'keyword.operator.nand2tetrisHDL'
               }
             ]
           }
@@ -109,12 +109,12 @@
         'begin': '\\b([a-zA-Z][a-zA-Z0-9]*)\\b\\s*(?=\\()'
         'beginCaptures':
           '1':
-            'name': 'entity.name.function.chip.name.verilog'
+            'name': 'entity.name.function.chip.name.nand2tetrisHDL'
         'end': '(?<=\\))\\s*;'
         'endCaptures':
           '0':
-            'name': 'punctuation.terminator.expression.verilog'
-        'name': 'meta.block.instantion.chip.verilog'
+            'name': 'punctuation.terminator.expression.nand2tetrisHDL'
+        'name': 'meta.block.instantion.chip.nand2tetrisHDL'
         'patterns': [
           {
             'include': '#parenthetical_list'
@@ -134,7 +134,7 @@
         'end': '(?<=})'
         'endCaptures':
           '0':
-            'name': 'punctuation.terminator.module.verilog'
+            'name': 'punctuation.terminator.module.nand2tetrisHDL'
         'name': 'meta.block.module.nand2tetrisHDL'
         'patterns': [
           {
