@@ -1,0 +1,46 @@
+'fileTypes': [
+  'hdl'
+]
+'name': 'Nand2Tetris HDL, nand2tetrisHDL'
+'scopeName': 'source.verilog'
+'patterns': [
+  {
+    'include': '#comments'
+  }
+  {
+    'include': '#constants'
+  }
+]
+'repository':
+  'comments':
+    'patterns': [
+      {
+        'begin': '(^[ \\t]+)?(?=//)'
+        'beginCaptures':
+          '1':
+            'name': 'punctuation.whitespace.comment.leading.nand2tetrisHDL'
+        'end': '(?!\\G)'
+        'patterns': [
+          {
+            'begin': '//'
+            'beginCaptures':
+              '0':
+                'name': 'punctuation.definition.comment.nand2tetrisHDL'
+            'end': '\\n'
+            'name': 'comment.line.double-slash.nand2tetrisHDL'
+          }
+        ]
+      }
+      {
+        'begin': '/\\*'
+        'end': '\\*/'
+        'name': 'comment.block.c-style.verilog'
+      }
+    ]
+  'constants':
+    'patterns': [
+      {
+        'match': '\\b([0-9]+)\\b'
+        'name': 'constant.numeric.nand2tetrisHDL'
+      }
+    ]
