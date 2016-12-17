@@ -1,0 +1,87 @@
+'fileTypes': [
+  'asm'
+]
+'name': 'Nand2Tetris ASM'
+'scopeName': 'source.nand2tetrisASM'
+'patterns': [
+  {
+    'include': '#comments'
+  }
+  {
+    'include': '#keywords'
+  }
+  {
+    'include': '#operators'
+  }
+  {
+    'include': '#constants'
+  }
+  {
+    'include': '#instantiation_patterns'
+  }
+]
+'repository':
+  'comments':
+    'patterns': [
+      {
+        'begin': '(^[ \\t]+)?(?=//)'
+        'beginCaptures':
+          '1':
+            'name': 'punctuation.whitespace.comment.leading.nand2tetrisASM'
+        'end': '(?!\\G)'
+        'patterns': [
+          {
+            'begin': '//'
+            'beginCaptures':
+              '0':
+                'name': 'punctuation.definition.comment.nand2tetrisASM'
+            'end': '\\n'
+            'name': 'comment.line.double-slash.nand2tetrisASM'
+          }
+        ]
+      }
+      {
+        'begin': '/\\*'
+        'end': '\\*/'
+        'name': 'comment.block.c-style.nand2tetrisASM'
+      }
+    ]
+  'constants':
+    'patterns': [
+      {
+        'match': '\\b([0-9]+)\\b'
+        'name': 'constant.numeric.nand2tetrisASM'
+      }
+      {
+        'match': '\\b(SCREEN|KBD|R(?:[0-9]|1[0-5]))\\b'
+        'name': 'constant.language.true.false.nand2tetrisHDL'
+      }
+    ]
+  'keywords':
+    'patterns': [
+      {
+        'match': '\\b(A|M|D|AM|AD|MD|AMD|J(?:(MP)|(GT)|(GE)|(EQ)|(NE)|(LT)|(LE)))\\b'
+        'name': 'entity.name.function.predefined.nand2tetrisASM'
+      }
+    ]
+  'operators':
+    'patterns': [
+      {
+        'match': '@|;|-|\\+|='
+        'name': 'keyword.operator.nand2tetrisASM'
+      }
+    ]
+  'instantiation_patterns':
+    'patterns': [
+      {
+        'match': '\\b(?<=@)[a-zA-Z]+\\b'
+        'name': 'variable.parameter.type.address.nand2tetrisASM'
+      }
+      {
+        'match': '\\B\\(([a-zA-Z]+)\\)\\B'
+        'captures':
+          '1':
+            'name': 'variable.parameter.type.label.nand2tetrisASM'
+        'name': 'meta.block.label.nand2tetrisASM'
+      }
+    ]

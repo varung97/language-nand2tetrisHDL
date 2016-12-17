@@ -1,0 +1,3 @@
+'.source.nand2tetrisASM':
+  'editor':
+    'commentStart': '// '

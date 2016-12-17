@@ -156,7 +156,7 @@
         'beginCaptures':
           '1':
             'name': 'entity.name.function.chip.name.nand2tetrisHDL'
-        'end': '(?<=\\))\\s*;'
+        'end': '(?<=\\))'
         'endCaptures':
           '0':
             'name': 'punctuation.terminator.expression.nand2tetrisHDL'
